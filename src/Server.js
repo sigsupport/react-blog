@@ -80,6 +80,10 @@ app.post('/api/articles/:name/add-comment', (req, res) => {
     }, res);
 });
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+})
+
 app.listen(8500, () => console.log ('Listening on port 8500'));
 
 
